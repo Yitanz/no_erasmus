@@ -198,7 +198,7 @@
     </form>
 
     <!--enviar-->
-    <textarea class="chatbox__message" placeholder="Write something interesting"></textarea>
+    <input class="chatbox__message" placeholder="Write something interesting"></input>
 </div>
 
 
