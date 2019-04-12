@@ -96,8 +96,53 @@ class AssignEmpZonaController extends Controller
     return view('gestio/AssignEmpZona/freeEmployeNeteja', compact('user','data_inici', 'data_fi', 'id_zona'));
   }
 
-  public function saveAssignNeteja(){
-    
+    public function saveAssignNeteja (Request $request, $id){
+        
+        $AssignEmpZona = new ServeisZones([
+            'id_zona' => $request->get('id_zona'),
+            'id_servei' => 1,
+            'id_empleat' => $request->get('id_empleat'),
+            'data_inici' => $request->get('data_inici_modal'),
+            'data_fi' => $request->get('data_fi_modal'),
+        ]);
+
+        $AssignEmpZona->save();
+        return redirect('gestio/AssignEmpZona')->with('success', 'Assignacio suprimida correctament');
+
   }
+
+  public function viewDataAtencio(Request $request, $id){
+
+    $zona = Zona::find($id);
+    return view('gestio/AssignEmpZona/dateAtencio', compact('zona'));
+
+  }
+
+  public function filterEmployeAtencio(Request $request, $id){
+    
+    $data_inici = $request->get('data_inici_assignacio_empleat');
+    $data_fi = $request->get('data_fi_assignacio_empleat');
+
+    $user = AssignEmpZona::assignarAtencioFiltro ($data_inici, $data_fi);
+    $id_zona = Zona::find($id);
+    
+    return view('gestio/AssignEmpZona/freeEmployeAtencio', compact('user','data_inici', 'data_fi', 'id_zona'));
+  }
+
+  public function saveAssignAtencio (Request $request, $id){
+        
+        $AssignEmpZona = new ServeisZones([
+            'id_zona' => $request->get('id_zona'),
+            'id_servei' => 3,
+            'id_empleat' => $request->get('id_empleat'),
+            'data_inici' => $request->get('data_inici_modal'),
+            'data_fi' => $request->get('data_fi_modal'),
+        ]);
+
+        $AssignEmpZona->save();
+        return redirect('gestio/AssignEmpZona')->with('success', 'Assignacio suprimida correctament');
+
+  }
+
   
 }
