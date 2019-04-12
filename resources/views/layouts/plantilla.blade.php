@@ -40,10 +40,9 @@
     @yield("footer")
 
     <!--Cookie banner-->
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    
     <script src="{{ asset('js/public.js') }}"></script>
     <script src="{{ asset('js/chat.js') }}"></script>
 

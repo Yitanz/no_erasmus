@@ -543,4 +543,28 @@ class HomeController extends Controller
     public function notificacionsGeneral(){
       return view('notificacions');
     }
+
+    public function ajaxChat()
+    {
+      ini_set('max_execution_time',7000);
+
+      while(Chat::where('check',0)->count() < 1){
+          usleep(1000);
+      }
+
+      if(Chat::where('check',0)->count() > 0)
+      {
+          $message = Chat::where('check',0)->first();
+          $id = $message->id;
+          $update = Chat::find($id);
+          $update->check = 1;
+          $update->save();
+
+
+          return response()->json([
+            'msg'=>$message->name,
+          ]);
+      }
+
+    }
 }

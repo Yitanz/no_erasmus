@@ -11,6 +11,7 @@
 |
 */
  Route::get('/',"HomeController@index")->name('home');
+
  Route::get('/contacte','HomeController@contacte')->name('contacte');
  Route::get('/noticies',"HomeController@noticies")->name('noticies');
  Route::get('/noticies/n',"HomeController@noticia")->name('noticia');
