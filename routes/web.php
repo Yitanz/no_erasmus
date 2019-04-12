@@ -72,6 +72,11 @@ Route::get ('gestio/zones/{id}/data/show', 'AssignEmpZonaController@viewDataShow
 Route::get ('gestio/zones/{id}/data/empleat/show', 'AssignEmpZonaController@filterEmployeShow')->name('filterEmployeShow')->middleware(['auth','is_admin','verified']);
 Route::any('/gestio/zones/crearassignacioShow/guardar/{id}', 'AssignEmpZonaController@saveAssignShow')->name('zones.saveAssign.Show')->middleware(['auth','is_admin','verified']);
 
+//assignacio emp-zona seguretat al client
+Route::get ('gestio/zones/{id}/data/seguretat', 'AssignEmpZonaController@viewDataSeguretat')->name('AssignEmpZonaDataSeguretat')->middleware(['auth','is_admin','verified']);
+Route::get ('gestio/zones/{id}/data/empleat/seguretat', 'AssignEmpZonaController@filterEmployeSeguretat')->name('filterEmployeSeguretat')->middleware(['auth','is_admin','verified']);
+Route::any('/gestio/zones/crearassignacioseguretat/guardar/{id}', 'AssignEmpZonaController@saveAssignSeguretat')->name('zones.saveAssign.Seguretat')->middleware(['auth','is_admin','verified']);
+
 /*Route::get ('gestio/zones/{id}/data/empleat/', 'AssignEmpZonaController@filterEmploye')->name('filterEmploye')->middleware(['auth','is_admin','verified']);
 Route::any('/gestio/zones/crearassignaciomanteniment/guardar/{id}', 'AssignEmpZonaController@saveAssign')->name('zones.saveAssign')->middleware(['auth','is_admin','verified']);
 Route::get ('/gestio/zones/llistarAssign', 'AssignEmpZonaController@listAssign')->name('zones.list')->middleware(['auth','is_admin','verified']);;

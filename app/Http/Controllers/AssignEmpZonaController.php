@@ -175,6 +175,37 @@ class AssignEmpZonaController extends Controller
         return redirect('gestio/AssignEmpZona')->with('success', 'Assignacio creada correctament');
 
   }
+public function viewDataSeguretat(Request $request, $id){
 
+    $zona = Zona::find($id);
+    return view('gestio/AssignEmpZona/dateSeg', compact('zona'));
+
+  }
+
+  public function filterEmployeSeguretat(Request $request, $id){
+    
+    $data_inici = $request->get('data_inici_assignacio_empleat');
+    $data_fi = $request->get('data_fi_assignacio_empleat');
+
+    $user = AssignEmpZona::assignarSeguretatFiltro ($data_inici, $data_fi);
+    $id_zona = Zona::find($id);
+    
+    return view('gestio/AssignEmpZona/freeEmployeSeg', compact('user','data_inici', 'data_fi', 'id_zona'));
+  }
+
+  public function saveAssignSeguretat (Request $request, $id){
+        
+        $AssignEmpZona = new ServeisZones([
+            'id_zona' => $request->get('id_zona'),
+            'id_servei' => 5,
+            'id_empleat' => $request->get('id_empleat'),
+            'data_inici' => $request->get('data_inici_modal'),
+            'data_fi' => $request->get('data_fi_modal'),
+        ]);
+
+        $AssignEmpZona->save();
+        return redirect('gestio/AssignEmpZona')->with('success', 'Assignacio creada correctament');
+
+  }
   
 }

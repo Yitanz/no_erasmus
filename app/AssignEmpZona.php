@@ -112,7 +112,7 @@ class AssignEmpZona extends Model
     FROM
        users
     WHERE
-        users.id_rol = 7
+        users.id_rol = 8
         AND
        users.id NOT IN
        (

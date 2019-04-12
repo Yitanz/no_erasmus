@@ -47,7 +47,7 @@
             <a href="{{ route('AssignEmpZonaData', $assign->id )}}" class="btn btn-primary btn-sm">Manteniment</a>
             <a href="{{ route('AssignEmpZonaDataNeteja', $assign->id )}}" class="btn btn-primary btn-sm">Neteja</a>
             <a href="{{ route('AssignEmpZonaDataAtencio', $assign->id) }}" class="btn btn-primary btn-sm">Atencio al client</a>
-            <a href="{{ route('AssignEmpZonaData', $assign->id) }}" class="btn btn-primary btn-sm">Seguretat</a>
+            <a href="{{ route('AssignEmpZonaDataSeguretat', $assign->id) }}" class="btn btn-primary btn-sm">Seguretat</a>
             <a href="{{ route('AssignEmpZonaDataShow', $assign->id) }}" class="btn btn-primary btn-sm">Show</a>
             </div>
             </td>
