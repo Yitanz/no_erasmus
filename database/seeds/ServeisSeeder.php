@@ -18,5 +18,14 @@ class ServeisSeeder extends Seeder
         DB::table('serveis')->insert([
             'nom' => 'Manteniment'
         ]);
+        DB::table('serveis')->insert([
+            'nom' => 'Atencio al client'
+        ]);
+        DB::table('serveis')->insert([
+            'nom' => 'Show'
+        ]);
+        DB::table('serveis')->insert([
+            'nom' => 'Seguretat'
+        ]);
     }
 }
