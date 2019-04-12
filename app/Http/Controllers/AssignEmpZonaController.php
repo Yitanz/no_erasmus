@@ -55,7 +55,7 @@ class AssignEmpZonaController extends Controller
         ]);
 
         $AssignEmpZona->save();
-        return redirect('gestio/AssignEmpZona')->with('success', 'Assignacio suprimida correctament');
+        return redirect('gestio/AssignEmpZona')->with('success', 'Assignacio creada correctament');
 
   }
 
@@ -107,7 +107,7 @@ class AssignEmpZonaController extends Controller
         ]);
 
         $AssignEmpZona->save();
-        return redirect('gestio/AssignEmpZona')->with('success', 'Assignacio suprimida correctament');
+        return redirect('gestio/AssignEmpZona')->with('success', 'Assignacio creada correctament');
 
   }
 
@@ -140,7 +140,39 @@ class AssignEmpZonaController extends Controller
         ]);
 
         $AssignEmpZona->save();
-        return redirect('gestio/AssignEmpZona')->with('success', 'Assignacio suprimida correctament');
+        return redirect('gestio/AssignEmpZona')->with('success', 'Assignacio creada correctament');
+
+  }
+  public function viewDataShow(Request $request, $id){
+
+    $zona = Zona::find($id);
+    return view('gestio/AssignEmpZona/dateShow', compact('zona'));
+
+  }
+
+  public function filterEmployeShow(Request $request, $id){
+    
+    $data_inici = $request->get('data_inici_assignacio_empleat');
+    $data_fi = $request->get('data_fi_assignacio_empleat');
+
+    $user = AssignEmpZona::assignarShowFiltro($data_inici, $data_fi);
+    $id_zona = Zona::find($id);
+    
+    return view('gestio/AssignEmpZona/freeEmployeShow', compact('user','data_inici', 'data_fi', 'id_zona'));
+  }
+
+  public function saveAssignShow (Request $request, $id){
+        
+        $AssignEmpZona = new ServeisZones([
+            'id_zona' => $request->get('id_zona'),
+            'id_servei' => 4,
+            'id_empleat' => $request->get('id_empleat'),
+            'data_inici' => $request->get('data_inici_modal'),
+            'data_fi' => $request->get('data_fi_modal'),
+        ]);
+
+        $AssignEmpZona->save();
+        return redirect('gestio/AssignEmpZona')->with('success', 'Assignacio creada correctament');
 
   }
 

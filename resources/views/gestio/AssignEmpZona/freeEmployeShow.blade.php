@@ -15,7 +15,7 @@
   </div>
   @endif
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Assignar Empleats a Zones </h1>
+            <h1 class="h2">Assignar Empleats de show a Zones </h1>
             <div class="btn-toolbar mb-2 mb-md-0">
 				  <div class="btn-group mr-2">
           <form>
@@ -57,12 +57,12 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Assignar Empleat a la zona</h5>
+                <h5 class="modal-title">Assignar Empleat Show a la zona</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <form action="{{ route('zones.saveAssign', $id_zona->id) }}">
+              <form action="{{ route('zones.saveAssign.Show', $id_zona->id) }}">
               @csrf
               <div class="modal-body">
                 <div class="row">
