@@ -59,7 +59,7 @@ Route::get('/gestio/zones/eliminarAssign/{id}', 'AssignEmpZonaController@deleteA
 
 //assignacio emp-zona neteja
 Route::get ('gestio/zones/{id}/data/neteja', 'AssignEmpZonaController@viewDataNeteja')->name('AssignEmpZonaDataNeteja')->middleware(['auth','is_admin','verified']);
-Route::get ('gestio/zones/{id}/data/empleat/neteja', 'AssignEmpZonaController@filterEmployeNeteja')->name('filterEmploye')->middleware(['auth','is_admin','verified']);
+Route::get ('gestio/zones/{id}/data/empleat/neteja', 'AssignEmpZonaController@filterEmployeNeteja')->name('filterEmployeNeteja')->middleware(['auth','is_admin','verified']);
 /*Route::get ('gestio/zones/{id}/data/empleat/', 'AssignEmpZonaController@filterEmploye')->name('filterEmploye')->middleware(['auth','is_admin','verified']);
 Route::any('/gestio/zones/crearassignaciomanteniment/guardar/{id}', 'AssignEmpZonaController@saveAssign')->name('zones.saveAssign')->middleware(['auth','is_admin','verified']);
 Route::get ('/gestio/zones/llistarAssign', 'AssignEmpZonaController@listAssign')->name('zones.list')->middleware(['auth','is_admin','verified']);;
