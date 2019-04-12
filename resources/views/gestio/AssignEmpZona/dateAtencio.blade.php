@@ -30,7 +30,7 @@
     </div>
 @endif
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-              <h1 class="h2">Atencio: Assignar Empleats a Atraccio</h1>
+              <h1 class="h2">Atencio: Assignar Empleats a Zona</h1>
               <div class="btn-toolbar mb-2 mb-md-0">
                 <div class="btn-group mr-2">
                   <button class="btn btn-sm btn-outline-secondary" value="Exportar">
@@ -40,7 +40,7 @@
                 </div>
               </div>
             </div>
-            <form action="{{route('filterEmploye', $zona->id)}}">
+            <form action="{{route('filterEmployeAtencio', $zona->id)}}">
               @csrf
             <div class="row">
               <div class="col-4">
