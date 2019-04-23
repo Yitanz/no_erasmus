@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Zona;
 
 class ZonesSeeder extends Seeder
 {
@@ -11,16 +12,6 @@ class ZonesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('zones')->insert([
-            'nom' => 'Mediterrania',
-        ]);
-
-        DB::table('zones')->insert([
-            'nom' => 'Mexico',
-        ]);
-
-        DB::table('zones')->insert([
-            'nom' => 'Jamaica',
-        ]);
+                factory(Zona::class)->times(10)->create();
     }
 }

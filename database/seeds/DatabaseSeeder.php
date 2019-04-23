@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             CategoriesSeeder::class,
             PromocionsSeeder::class,
             TipusProducteSeeder::class,
-			NoticiesSeeder::class,
+			      NoticiesSeeder::class,
         ]);
     }
 }
