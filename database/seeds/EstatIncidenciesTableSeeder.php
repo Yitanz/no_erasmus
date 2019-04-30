@@ -11,7 +11,16 @@ class EstatIncidenciesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Incidencia::class)->times(10)->create();
+        DB::table('estat_incidencies')->insert([
+            'nom_estat' => 'To-do'
+        ]);
 
+        DB::table('estat_incidencies')->insert([
+            'nom_estat' => 'In progress'
+        ]);
+
+        DB::table('estat_incidencies')->insert([
+            'nom_estat' => 'Done'
+        ]);
     }
 }
